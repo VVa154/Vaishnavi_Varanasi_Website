@@ -189,13 +189,14 @@ body {
 }
 
 .about-photo {
-  width: 250px;
+  width: 350px;               /* increased from 250px */
   height: auto;
-  max-height: 350px;
+  max-height: 450px;          /* increased from 350px */
   border-radius: 25px;        /* same as wrapper for perfect curve */
   object-fit: cover;
   border: 2px solid black;    /* keeps the dark outline visible */
 }
+
 
 
 .about-text {
