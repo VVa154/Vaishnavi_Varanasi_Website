@@ -1,0 +1,235 @@
+/* ====== GENERAL ====== */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  background-color: #7b4b28;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links .active {
+  text-decoration: underline;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 0.95rem;
+}
+
+.social-links i {
+  margin-right: 5px;
+}
+
+/* ====== HERO (Index Page) ====== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #fff;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin: 0;
+  color: #5a3e2b;
+}
+
+.hero-content h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 10px 0;
+  color: #5a3e2b;
+}
+
+.hero-content p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0 25px;
+  color: #5a3e2b;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cv-btn {
+  border: 2px solid #5a3e2b;
+  color: #5a3e2b;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cv-btn:hover {
+  background-color: #5a3e2b;
+  color: #fff;
+}
+
+.icon-btn {
+  color: #5a3e2b;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.icon-btn:hover {
+  color: #7b4b28;
+}
+
+/* ====== SECTIONS / CARDS (Projects & Blog) ====== */
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fdf8f4;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h2 {
+  color: #5a3e2b;
+  font-size: 1.1rem;
+  margin: 15px 10px 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  padding: 0 15px 15px;
+}
+
+.card a {
+  display: inline-block;
+  background-color: #7b4b28;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  background-color: #4a2d1a;
+}
+
+/* ====== ABOUT ====== */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Add a wrapper around your photo in HTML */
+.about-photo-wrapper {
+  display: inline-block;
+  border-radius: 25px;        /* curved edges */
+  overflow: visible;           /* allow outline and shadow to show */
+  box-shadow: none;            /* no shadow, so outline is clear */
+}
+
+.about-photo {
+  width: 250px;
+  height: auto;
+  max-height: 350px;
+  border-radius: 25px;        /* same as wrapper for perfect curve */
+  object-fit: cover;
+  border: 2px solid black;    /* keeps the dark outline visible */
+}
+
+
+.about-text {
+  max-width: 500px;
+}
+
+/* ====== PROJECT DETAIL PAGES ====== */
+.project-detail {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Lato', sans-serif;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+.project-detail h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #5a3e2b;
+}
+
+.project-detail p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background-color: transparent;
+  color: #2b2b2b;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 5px 0;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UB Research Assistant - Vaishnavi Varanasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">University at Buffalo Research Assistant</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+    </ul>
+  </nav>
+
+  <section class="project-detail">
+  <h1></h1>
+
+  <h2>Introduction</h2>
+  <p>
+    The UB Research Assistant is an AI-powered academic tool designed specifically for the University at Buffalo community. 
+    It simplifies the research process for students, faculty, and scholars by offering quick paper summarization, smart recommendations,
+    and a collaboration matching system with UB faculty. By combining the power of language models, semantic search, and open-access APIs,
+    the tool helps users discover, digest, and connect around cutting-edge academic work.
+  </p>
+
+  <h2>Objectives</h2>
+  <ul>
+    <li>Automate the summarization of research papers using LLMs</li>
+    <li>Provide real-time recommendations of similar papers</li>
+    <li>Enable users to find UB faculty members working on related research areas</li>
+    <li>Reduce time spent on reading and searching through disconnected platforms</li>
+    <li>Lay the groundwork for future global collaboration beyond UB</li>
+  </ul>
+
+  <h2>Scope</h2>
+  <ul>
+    <li><strong>Research Paper Search:</strong> via Semantic Scholar and arXiv APIs</li>
+    <li><strong>Paper Summarization:</strong> using a locally served language model (Mistral via Ollama)</li>
+    <li><strong>Paper Recommendation Engine:</strong> based on keyword relevance and embeddings</li>
+    <li><strong>UB Faculty Research Matcher:</strong> matches user keywords with UB faculty research stored in a local JSON DB and ChromaDB</li>
+  </ul>
+
+  <h2>Technical Details</h2>
+  <ul>
+    <li><strong>Python Version:</strong> 3.11</li>
+    <li><strong>Libraries:</strong> Streamlit, ChromaDB, Requests, Ollama</li>
+    <li><strong>APIs Used:</strong> Semantic Scholar, arXiv</li>
+    <li><strong>UI Framework:</strong> Streamlit</li>
+  </ul>
+
+  <h2>Challenges</h2>
+  <ul>
+    <li>Selecting the most flexible and open API (Semantic Scholar vs. arXiv)</li>
+    <li>Handling abstract-less papers</li>
+    <li>Designing a clean yet informative UI</li>
+  </ul>
+
+  <h2>Project Link</h2>
+  <p>
+    GitHub: <a href="https://github.com/VVa154/Research-Assistant-at-UB" target="_blank">UB Research Assistant GitHub Repository</a>
+  </p>
+
+  <h2>Project Report</h2>
+  <p>
+    <a href="UB_Research_Assistant_Report.pdf" target="_blank">Download Project Report</a>
+  </p>
+
+  <a href="projects.html" class="back-link">← Back to Projects</a>
+
+  <footer class="footer">
+    <p>&copy; 2025 Vaishnavi Varanasi. All rights reserved.</p>
+  </footer>
+</body>
+</html>
