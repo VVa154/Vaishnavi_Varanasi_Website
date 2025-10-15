@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLens AI - Vaishnavi Varanasi</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">LifeLens AI</div>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../projects.html" class="active">Projects</a></li>
+    </ul>
+  </nav>
+
+  <section class="project-detail">
+    <h1>LifeLens AI</h1>
+
+    <h2>Introduction</h2>
+    <p>
+      The increasing prevalence of stress, mental health concerns, and performance anxiety calls for accessible tools that provide 
+      personalized guidance. Artificial Intelligence (AI), particularly generative models, opens up avenues to address these needs. 
+      This project aimed to create an AI life coach that mimics the behaviour of a human coach while retaining user-specific knowledge over time. 
+      The AI system is designed to work offline, protect user data, and simulate human-like therapeutic conversations, offering a unique 
+      blend of technology and empathy.
+    </p>
+
+    <h2>Objectives</h2>
+    <ul>
+      <li>Develop a generative AI chatbot that interacts via text and audio</li>
+      <li>Embed long-term memory using ChromaDB and SQLite to store user interactions</li>
+      <li>Build a user-friendly frontend interface for conversations and habit tracking</li>
+      <li>Ensure offline functionality and data privacy</li>
+      <li>Integrate emotion detection and stop-word alerts for ethical responsiveness</li>
+    </ul>
+
+    <h2>Scope</h2>
+    <ul>
+      <li><strong>Research Paper Search:</strong> via Semantic Scholar and arXiv APIs</li>
+      <li><strong>Paper Summarization:</strong> using a locally served language model (Mistral via Ollama)</li>
+      <li><strong>Paper Recommendation Engine:</strong> based on keyword relevance and embeddings</li>
+      <li><strong>UB Faculty Research Matcher:</strong> matches user keywords with UB faculty research stored in a local JSON DB and ChromaDB</li>
+    </ul>
+
+    <h2>Technical Details</h2>
+    <ul>
+      <li><strong>Backend-</strong>Ollama, ChromaDB, SQLite<strong>Frontend-</strong>Streamlit</li>
+      <li><strong>Interaction Flow-</strong>
+        <ul>
+          <li>User inputs(text/voice)</li>
+          <li>Voice-to-text conversion(via Google Speech-to-Text)</li>
+          <li>Memory retrieval(ChromaDB+SQLite)</li>
+          <li>LLM-generated empathetic response</li>
+          <li>UI displays reply+ stores conversation</li>
+        </ul>
+      </li>
+      <li><strong>SQLite-</strong> Structured database for storing user chats, emotional states, goals, and session history</li>
+      <li><strong>ChromaDB-</strong>Vector database for storing and retrieving semantically meaningful conversation segments 
+        (e.g., therapy Q&A examples)</li>
+      <li><strong>Voice Handling-</strong>Google Speech-to-Text API: Converts uploaded voice recordings into text. 
+        Originally attempted Bark (LLM for voice generation), but switched due to high RAM requirements (~20–25 GB)</li>
+    </ul>
+
+    <h2>Challenges</h2>
+    <ul>
+      <li>Bark LLM for voice too memory- heavy</li>
+      <li>Token limit optimization</li>
+      <li>Ethical responses for serious issues</li>
+    </ul>
+
+    <h2>Project Link</h2>
+    <p>
+      GitHub: <a href="https://github.com/VVa154/LifeLens-AI" target="_blank">LifeLens-AI</a>
+    </p>
+
+    <h2>Project Report</h2>
+    <p>
+      <a href="Report_LifeLens_AI.pdf" target="_blank">Download Project Report</a>
+    </p>
+
+    <a href="../../../projects.html" class="back-link">← Back to Projects</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Vaishnavi Varanasi. All rights reserved.</p>
+  </footer>
+</body>
+</html>

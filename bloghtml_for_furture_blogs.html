@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Vaishnavi Varanasi</title>
+  <title>Blog - Vaishnavi Varanasi</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Tabs styling */
+    /* Tabs */
     .tab-container {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .tabs {
@@ -23,7 +23,7 @@
 
     .tab {
       background: none;
-      padding: 10px 30px;
+      padding: 10px 25px;
       border-radius: 25px;
       font-weight: 600;
       cursor: pointer;
@@ -36,7 +36,7 @@
       color: #333;
     }
 
-    /* Projects grid layout */
+    /* Blog grid layout */
     .tab-content {
       display: none;
       justify-content: center;
@@ -50,56 +50,49 @@
       display: flex;
     }
 
-    /* Project card styling */
-    .project-card {
-      width: 280px;
+    .blog-card {
+      width: 300px;
       border-radius: 16px;
       background-color: #fff;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       overflow: hidden;
-      text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      text-align: left;
     }
 
-    .project-card:hover {
+    .blog-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
 
-   /* Project heading rectangle */
-.project-card h3 {
-  margin: 0;
-  background-color: #fdf8f4;
-  padding: 0 10px;          /* horizontal padding only */
-  color: #5a3e2b;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-bottom: 1px solid #ddd;
-  height: 60px;             /* fixed height */
-  display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
-  text-align: center;
-}
-
-    /* View Project button */
-    .project-card a {
-      display: inline-block;
-      margin: 20px auto;
-      padding: 10px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      background-color: #7b4b28;
-      transition: 0.3s;
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .project-card a:hover {
-      background-color: #4a2d1a;
+    .blog-card-content {
+      padding: 18px;
+    }
+
+    .blog-card-content a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+
+    .blog-card-content a:hover {
+      color: #ff9f43;
+    }
+
+    .blog-card-content p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     /* Responsive */
@@ -108,7 +101,7 @@
         flex-direction: column;
         align-items: center;
       }
-      .project-card {
+      .blog-card {
         width: 90%;
       }
     }
@@ -121,8 +114,8 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Milestones</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
     </ul>
     <div class="social-links">
       <a href="https://github.com/VVa154" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -130,32 +123,51 @@
     </div>
   </nav>
 
-  <section class="project-section">
+  <section class="blog-section">
     <!-- Tabs -->
     <div class="tab-container">
       <div class="tabs">
-        <div class="tab" onclick="openTab('portfolio')">Portfolio Projects</div>
-        <div class="tab" onclick="openTab('work')">Work Projects</div>
+        <div class="tab" onclick="openTab('personal')">Personal</div>
+        <div class="tab" onclick="openTab('professional')">Professional</div>
       </div>
 
-      <!-- Portfolio Projects Tab -->
-      <div id="portfolio" class="tab-content">
-        <div class="project-card">
-          <h3>University at Buffalo Research Assistant</h3>
-          <a href="Projects/Portfolio_Projects/UB_Research_Assistant/UB_Research_Assistant.html">View Project</a>
+      <!-- Personal Tab -->
+      <div id="personal" class="tab-content">
+        <div class="blog-card">
+          <img src="blog_images/Personal/Blog1.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Personal/Blog1.html">Finding Creativity in Everyday Life</a>
+            <p>Exploring how small, simple moments can inspire meaningful ideas and creativity.</p>
+          </div>
         </div>
 
-        <div class="project-card">
-          <h3>LifeLens AI</h3>
-          <a href="Projects/Portfolio_Projects/LifeLens_AI/LifeLens_AI.html">View Project</a>
+        <div class="blog-card">
+          <img src="blog_images/Personal/Blog2.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Personal/Blog2.html">Embracing Minimalism</a>
+            <p>Why simplifying your environment and mind helps foster clarity and happiness.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Work Projects Tab -->
-      <div id="work" class="tab-content">
-        
-          <h3>Work Projects to be added</h3>
-    
+      <!-- Professional Tab -->
+      <div id="professional" class="tab-content">
+        <div class="blog-card">
+          <img src="blog_images/Professional/Blog1.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Professional/Blog1.html">Lessons from My Data Journey</a>
+            <p>Key takeaways from working with data across analytics, visualization, and forecasting.</p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="blog_images/Professional/Blog2.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Professional/Blog2.html">Power of Storytelling in Data</a>
+            <p>Transforming complex insights into meaningful stories that drive action.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -174,11 +186,13 @@
       document.querySelector(`.tab[onclick="openTab('${tabName}')"]`).classList.add('active');
       document.getElementById(tabName).classList.add('active');
 
-      sessionStorage.setItem('activeProjectTab', tabName);
+      // Save selected tab in sessionStorage
+      sessionStorage.setItem('activeBlogTab', tabName);
     }
 
+    // Restore tab on page load
     window.addEventListener('DOMContentLoaded', () => {
-      const activeTab = sessionStorage.getItem('activeProjectTab') || 'portfolio';
+      const activeTab = sessionStorage.getItem('activeBlogTab') || 'personal'; // default to personal
       openTab(activeTab);
     });
   </script>
