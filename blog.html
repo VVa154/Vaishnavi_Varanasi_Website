@@ -5,8 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog - Vaishnavi Varanasi</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for social icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Tabs */
+    .tab-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .tabs {
+      display: inline-flex;
+      gap: 20px;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+
+    .tab {
+      background: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      color: #555;
+    }
+
+    .tab.active {
+      background-color: #ffcf9d;
+      color: #333;
+    }
+
+    /* Blog grid layout */
+    .tab-content {
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto 80px auto;
+    }
+
+    .tab-content.active {
+      display: flex;
+    }
+
+    .blog-card {
+      width: 300px;
+      border-radius: 16px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 18px;
+    }
+
+    .blog-card-content a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+
+    .blog-card-content a:hover {
+      color: #ff9f43;
+    }
+
+    .blog-card-content p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tab-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .blog-card {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -19,18 +118,83 @@
       <li><a href="blog.html" class="active">Blog</a></li>
     </ul>
     <div class="social-links">
-      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/VVa154" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/vaishnavi-varanasi-838104129/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </nav>
 
   <section class="blog-section">
-    <h1 class="page-heading">Blog</h1>
-    <p class="empty-message">Blog Posts coming soon</p>
+    <!-- Tabs -->
+    <div class="tab-container">
+      <div class="tabs">
+        <div class="tab" onclick="openTab('personal')">Personal</div>
+        <div class="tab" onclick="openTab('professional')">Professional</div>
+      </div>
+
+      <!-- Personal Tab -->
+      <div id="personal" class="tab-content">
+        <div class="blog-card">
+          <img src="blog_images/Personal/Blog1.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Personal/Blog1.html">Finding Creativity in Everyday Life</a>
+            <p>Exploring how small, simple moments can inspire meaningful ideas and creativity.</p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="blog_images/Personal/Blog2.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Personal/Blog2.html">Embracing Minimalism</a>
+            <p>Why simplifying your environment and mind helps foster clarity and happiness.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Tab -->
+      <div id="professional" class="tab-content">
+        <div class="blog-card">
+          <img src="blog_images/Professional/Blog1.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Professional/Blog1.html">Lessons from My Data Journey</a>
+            <p>Key takeaways from working with data across analytics, visualization, and forecasting.</p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="blog_images/Professional/Blog2.jpg" alt="Blog Thumbnail">
+          <div class="blog-card-content">
+            <a href="blogs/Professional/Blog2.html">Power of Storytelling in Data</a>
+            <p>Transforming complex insights into meaningful stories that drive action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
     <p>&copy; 2025 Vaishnavi Varanasi. All rights reserved.</p>
   </footer>
+
+  <script>
+    function openTab(tabName) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.querySelector(`.tab[onclick="openTab('${tabName}')"]`).classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+
+      // Save selected tab in sessionStorage
+      sessionStorage.setItem('activeBlogTab', tabName);
+    }
+
+    // Restore tab on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const activeTab = sessionStorage.getItem('activeBlogTab') || 'personal'; // default to personal
+      openTab(activeTab);
+    });
+  </script>
 </body>
 </html>
